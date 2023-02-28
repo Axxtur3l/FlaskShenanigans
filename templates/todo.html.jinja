@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cinnamoroll</title>
+    <style>
+      :root {
+        --cinnamoroll-pink: #f7d7e9;
+        --cinnamoroll-blue: #b9d2eb;
+        --cinnamoroll-light-pink: #fff2f6;
+      }
+      .list-container {
+        background-color: var(--cinnamoroll-pink);
+        border: 1px solid var(--cinnamoroll-blue);
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px;
+      }
+      .list-item {
+        background-color: var(--cinnamoroll-light-pink);
+        border: 1px solid var(--cinnamoroll-blue);
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+   <h1>Cinnamoroll-themed Flask List</h1>
+   <div class="list-container">
+    <p>Take a list of random things: {{my_list}}</p>
+    <ul>
+    {% for todo in todolist %}
+        <li>{{ todo }}</li>
+    {% endfor %}
+    </ul>
+    <form
+        action = "/add"
+        method = "post"
+    >
+    
+         <textarea name = "new_todo">
+         </textarea>
+         <input type = "submit">
+    </form>
+  </body>
+</html>
+
